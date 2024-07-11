@@ -23,6 +23,16 @@ const images = [
 ];
 
 const container = document.getElementById("container");
+const prev = document.querySelector(".button.left")
+const next = document.querySelector(".button.right")
+
+// Elemento che verrà visualizzato
+let active = 0;
+next.addEventListener("click", function () {
+
+
+
+})
 
 images.forEach((elem) => {
 

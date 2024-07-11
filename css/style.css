@@ -62,3 +62,7 @@ img {
     color: white;
     margin-right: 5px;
 }
+
+.d-none {
+    display: none;
+}
