@@ -30,3 +30,7 @@ img {
     right: 0;
     bottom: 10px
 }
+
+.infos {
+    text-align: end;
+}

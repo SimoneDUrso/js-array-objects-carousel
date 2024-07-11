@@ -22,3 +22,21 @@ const images = [
     }
 ];
 
+const container = document.getElementById("container");
+
+images.forEach((elem) => {
+
+    container.innerHTML += `<div class="card relative">
+    
+                                <img src="${elem.image}" alt="">
+    
+                                <div class="infos absolute">
+                                    <h2>${elem.title}</h2>
+                                    <p>${elem.text}</p>
+                                </div>
+    
+                            </div>`
+
+})
+
+
