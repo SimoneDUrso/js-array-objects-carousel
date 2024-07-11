@@ -24,23 +24,23 @@ const images = [
 
 const container = document.getElementById("container")
 
-
+// forEach per stampare su schermo 
 images.forEach((elem) => {
 
     container.innerHTML += `<div class="card d-none">
     
-    <img src="${elem.image}" alt="">
+                                    <img src="${elem.image}" alt="">
     
-    <div class="infos">
-    <h2>${elem.title}</h2>
-    <p>${elem.text}</p>
-    </div>
+                                <div class="infos">
+                                    <h2>${elem.title}</h2>
+                                    <p>${elem.text}</p>
+                                </div>
     
-    </div>`
+                            </div>`
 
 })
 
-
+// Variabili per richiamare gli elementi del DOM
 let card = document.querySelectorAll(".card")
 const prev = document.querySelector(".button-left")
 const next = document.querySelector(".button-right")
@@ -50,6 +50,7 @@ let active = 0;
 card[active].classList.remove("d-none");
 console.log(card[active]);
 
+// Funzione per andare avanti
 next.addEventListener("click", function () {
     card[active].classList.add("d-none")
     if (active == images.length - 1) {
@@ -58,6 +59,18 @@ next.addEventListener("click", function () {
     else {
         active++
 
+    }
+    card[active].classList.remove("d-none")
+})
+
+// Funzione per andare indietro
+prev.addEventListener("click", function () {
+    card[active].classList.add("d-none")
+
+    if (active === 0) {
+        active = images.length - 1
+    } else {
+        active--
     }
     card[active].classList.remove("d-none")
 })
