@@ -26,11 +26,11 @@ const container = document.getElementById("container");
 
 images.forEach((elem) => {
 
-    container.innerHTML += `<div class="card relative">
-    
+    container.innerHTML += `<div class="card">
+                                
                                 <img src="${elem.image}" alt="">
     
-                                <div class="infos absolute">
+                                <div class="infos">
                                     <h2>${elem.title}</h2>
                                     <p>${elem.text}</p>
                                 </div>

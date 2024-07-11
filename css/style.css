@@ -5,14 +5,17 @@
 }
 
 #container {
-    max-width: 900px;
+    width: 900px;
     margin: 0 auto;
+    height: 600px;
+    position: relative;
 }
 
 .card {
-    max-width: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin-top: 30px;
-    height: 600px;
 }
 
 img {
@@ -21,16 +24,41 @@ img {
     object-fit: cover;
 }
 
-.relative {
-    position: relative;
-}
-
-.absolute {
+.infos {
     position: absolute;
     right: 0;
-    bottom: 10px
+    bottom: 10px;
+    text-align: end;
+    color: rgb(255, 255, 255);
+    margin: 5px;
 }
 
-.infos {
-    text-align: end;
+.button-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+    padding: 10px 15px;
+    font-size: 30px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    margin-left: 5px;
+}
+
+.button-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+    padding: 10px 15px;
+    font-size: 30px;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    margin-right: 5px;
 }
