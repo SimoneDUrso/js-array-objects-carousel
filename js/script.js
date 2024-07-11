@@ -1,7 +1,7 @@
 const images = [
     {
         image: 'img/01.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
+        title: 'Marvel\'s Spiderman Miles Morales',
         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
     }, {
         image: 'img/02.webp',
@@ -22,31 +22,42 @@ const images = [
     }
 ];
 
-const container = document.getElementById("container");
-const prev = document.querySelector(".button.left")
-const next = document.querySelector(".button.right")
+const container = document.getElementById("container")
 
-// Elemento che verrà visualizzato
-let active = 0;
-next.addEventListener("click", function () {
-
-
-
-})
 
 images.forEach((elem) => {
 
-    container.innerHTML += `<div class="card">
-                                
-                                <img src="${elem.image}" alt="">
+    container.innerHTML += `<div class="card d-none">
     
-                                <div class="infos">
-                                    <h2>${elem.title}</h2>
-                                    <p>${elem.text}</p>
-                                </div>
+    <img src="${elem.image}" alt="">
     
-                            </div>`
+    <div class="infos">
+    <h2>${elem.title}</h2>
+    <p>${elem.text}</p>
+    </div>
+    
+    </div>`
 
 })
 
 
+let card = document.querySelectorAll(".card")
+const prev = document.querySelector(".button-left")
+const next = document.querySelector(".button-right")
+
+// var elemento visibile
+let active = 0;
+card[active].classList.remove("d-none");
+console.log(card[active]);
+
+next.addEventListener("click", function () {
+    card[active].classList.add("d-none")
+    if (active == images.length - 1) {
+        active = 0;
+    }
+    else {
+        active++
+
+    }
+    card[active].classList.remove("d-none")
+})
