@@ -23,36 +23,42 @@ const images = [
 ];
 
 const container = document.getElementById("container")
+const thumbnailsBox = document.querySelector(".thumbnails")
+// Variabili per richiamare gli elementi del DOM
 
 // forEach per stampare su schermo 
 images.forEach((elem) => {
 
     container.innerHTML += `<div class="card d-none">
     
-                                    <img src="${elem.image}" alt="">
+    <img src="${elem.image}" alt="">
     
-                                <div class="infos">
-                                    <h2>${elem.title}</h2>
-                                    <p>${elem.text}</p>
-                                </div>
+    <div class="infos">
+    <h2>${elem.title}</h2>
+    <p>${elem.text}</p>
+    </div>
     
-                            </div>`
+    </div>`
+
+    thumbnailsBox.innerHTML += `<img class="thumbnail-img" src="${elem.image}">`
 
 })
 
-// Variabili per richiamare gli elementi del DOM
 let card = document.querySelectorAll(".card")
 const prev = document.querySelector(".button-left")
 const next = document.querySelector(".button-right")
+const thumbnails = document.querySelectorAll(".thumbnail-img")
 
 // var elemento visibile
 let active = 0;
 card[active].classList.remove("d-none");
+thumbnails[active].classList.add("opacity")
 console.log(card[active]);
 
 // Funzione per andare avanti
 next.addEventListener("click", function () {
     card[active].classList.add("d-none")
+    thumbnails[active].classList.remove("opacity")
     if (active == images.length - 1) {
         active = 0;
     }
@@ -61,11 +67,13 @@ next.addEventListener("click", function () {
 
     }
     card[active].classList.remove("d-none")
+    thumbnails[active].classList.add("opacity")
 })
 
 // Funzione per andare indietro
 prev.addEventListener("click", function () {
     card[active].classList.add("d-none")
+    thumbnails[active].classList.remove("opacity")
 
     if (active === 0) {
         active = images.length - 1
@@ -73,4 +81,5 @@ prev.addEventListener("click", function () {
         active--
     }
     card[active].classList.remove("d-none")
+    thumbnails[active].classList.add("opacity")
 })
